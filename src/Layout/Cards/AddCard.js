@@ -16,8 +16,9 @@ function AddCard() {
     const abortController = new AbortController();
     readDeck(deckId, abortController.signal).then(setDeck);
     return () => abortController.abort();
-  }, [deckId]);
+  }, [setDeck, deckId]);
 
+  
   // Add input to the card object
   const changeHandler = (event) => {
     setCard({ ...card, [event.target.name]: event.target.value });

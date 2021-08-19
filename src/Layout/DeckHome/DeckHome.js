@@ -14,7 +14,7 @@ function DeckHome() {
     const abortController = new AbortController();
     readDeck(deckId, abortController.signal).then(setDeck);
     return () => abortController.abort();
-  }, [deckId]);
+  }, [setDeck, deckId]);
 
   const history = useHistory();
 

@@ -11,7 +11,7 @@ function DeckList() {
     const abortController = new AbortController();
     listDecks(abortController.signal).then(setDecks); // retrieves array of decks from db
     return () => abortController.abort();
-  }, []);
+  }, [setDecks]);
 
   // Creates Deck component for each deck
   const list = decks.map((deck) => (

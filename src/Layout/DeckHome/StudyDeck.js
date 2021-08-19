@@ -23,7 +23,7 @@ function StudyDeck() {
     const abortController = new AbortController();
     readDeck(deckId, abortController.signal).then(setDeck);
     return () => abortController.abort();
-  }, [deckId]);
+  }, [setDeck,deckId]);
   
   // Flips the card when user clicks on flip button
   const HandleFlip = () => {

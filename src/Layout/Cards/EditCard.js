@@ -14,9 +14,9 @@ function EditCard() {
   // Deck information
   useEffect(() => {
     const abortController = new AbortController();
-    readDeck(deckId, abortController.signal).then(setDeck);
+    readDeck(deckId, abortController.signal).then((data) => setDeck(data));
     return () => abortController.abort();
-  }, [deckId]);
+  }, [setDeck, deckId]);
 
   // Card information
   useEffect(() => {
